@@ -32,6 +32,15 @@ jobs:
       - name: Checkout código
         uses: actions/checkout@v4
 
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar dependências (produção)
+        run: npm install --omit=dev
+        working-directory: ./server
+
       - name: Deploy para Azure App Service
         uses: azure/webapps-deploy@v3
         with:
