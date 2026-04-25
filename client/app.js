@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:3000";
+const API_BASE = "https://kiwa-dev-api.azurewebsites.net";
 
 async function callApi(path) {
   const res = await fetch(`${API_BASE}${path}`);
